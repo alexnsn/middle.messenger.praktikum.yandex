@@ -19,6 +19,9 @@
     "vite-plugin-handlebars": "^1.6.0",
     "vite-plugin-static-copy": "^0.16.0"
   },
+  "engines": {
+    "node": "v20.2.0"
+  },
   "staticFiles": {
     "staticPath": "src/statics/"
   }
