@@ -20,8 +20,3 @@ export const settingsFormTemplate = `
     </section>
   </main>
 `;
-
-
-
-
-  
