@@ -1,11 +1,11 @@
 # Проект для яндекс практикума. Реализация собственного мессенджера.
 ## Ссылки:
-- [авторизация](https://messengerpk.netlify.app/login)
-- [505](https://messengerpk.netlify.app/500)
-- [404](https://messengerpk.netlify.app/*)
-- [чат](https://messengerpk.netlify.app/chats)
-- [настройки пользователя](https://messengerpk.netlify.app/settings)
-- [регистрация](https://messengerpk.netlify.app/reg)
+- [авторизация](https://yandexmessangerkrasnoperov.netlify.app//login)
+- [505](https://yandexmessangerkrasnoperov.netlify.app/500)
+- [404](https://yandexmessangerkrasnoperov.netlify.app/*)
+- [чат](https://yandexmessangerkrasnoperov.netlify.app/chats)
+- [настройки пользователя](https://yandexmessangerkrasnoperov.netlify.app/settings)
+- [регистрация](https://yandexmessangerkrasnoperov.netlify.app/reg)
 ## Стек
 Node.js, JS, Viote, SCSS, Handlebars, Netlify 
 ## Макет
