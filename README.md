@@ -1,6 +1,7 @@
 # Проект для яндекс практикума. Реализация собственного мессенджера.
 ## Ссылки:
-- [авторизация](https://yandexmessangerkrasnoperov.netlify.app//login)
+- [авторизация1](https://yandexmessangerkrasnoperov.netlify.app/login)
+- [авторизация2](https://yandexmessangerkrasnoperov.netlify.app)
 - [505](https://yandexmessangerkrasnoperov.netlify.app/500)
 - [404](https://yandexmessangerkrasnoperov.netlify.app/*)
 - [чат](https://yandexmessangerkrasnoperov.netlify.app/chats)
