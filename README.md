@@ -6,6 +6,7 @@
 - [404](https://yandexmessangerkrasnoperov.netlify.app/*)
 - [чат](https://yandexmessangerkrasnoperov.netlify.app/chats)
 - [настройки пользователя](https://yandexmessangerkrasnoperov.netlify.app/settings)
+- [изменение настроек пользователя](https://yandexmessangerkrasnoperov.netlify.app/edit)
 - [регистрация](https://yandexmessangerkrasnoperov.netlify.app/reg)
 ## Стек
 Node.js, JS, Viote, SCSS, Handlebars, Netlify 

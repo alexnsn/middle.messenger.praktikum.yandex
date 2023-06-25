@@ -1,7 +1,7 @@
 import Handlebars from "handlebars";
-import { settingsFormTemplate } from "./Settings";
+import { editFormTemplate } from "./Edit";
 import { LinkButton } from "../../components/linkButton";
-import { inputGroupSettings } from "../../components/inputGroupSettings";
+import { inputGroupSettingsEdit } from "../../components/inputGroupSettingsEdit";
 
 var inputdata = 
 [
@@ -14,7 +14,7 @@ var inputdata =
 ]
 
 var filedsObjects = inputdata.map((arr) => {
-  return inputGroupSettings({
+  return inputGroupSettingsEdit({
   label:        arr[0],
   id:           arr[1],
   value:         arr[2]
@@ -22,9 +22,7 @@ var filedsObjects = inputdata.map((arr) => {
 
 var buttondata = 
 [
-  ["Изменить данные","button modal-btn navigation-btn", "/edit"],
-  ["Изменить пароль","button modal-btn navigation-btn"],
-  ["Выйти","button navigation-btn exit-btn","/login" ]
+  ["Сохранить","button navigation-btn", "/settings"]
 ]
 
 var buttonObjects = buttondata.map((arr) => {
@@ -33,8 +31,9 @@ var buttonObjects = buttondata.map((arr) => {
   className:    arr[1],
   path:         arr[2]
 })})
-export const Settings = () =>
-  Handlebars.compile(settingsFormTemplate)({
+
+export const Edit = () =>
+  Handlebars.compile(editFormTemplate)({
     name: "Иван",
     src: "statics/profile.jpg",
     srcBack: "statics/back.png",

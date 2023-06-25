@@ -3,6 +3,7 @@ import { NotFound } from "./src/screens/NotFound";
 import { Chats } from "./src/screens/Chats";
 import { Registration } from "./src/screens/Register";
 import { Settings } from "./src/screens/Settings";
+import { Edit } from "./src/screens/Edit";
 import { Errors5 } from "./src/screens/Errors5";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -22,6 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return Registration();
       case "/settings":
         return Settings();
+      case "/edit":
+         return Edit();
       default:
         return NotFound();
     }

@@ -1,5 +1,4 @@
-export const settingsFormTemplate = `
-  <img class="back" onclick="{{onClickBack}}" src={{srcBack}}>
+export const editFormTemplate = `
   <main class="profile-container">
     <section class="profile-container__main-info">
       <section class="profilePic" onclick={{onClick}}>
