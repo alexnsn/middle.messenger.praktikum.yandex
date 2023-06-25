@@ -212,42 +212,15 @@ img {
   line-height: 25px;
   color: $text-color;
   }
-  // width: 510px;
-  // height: fit-content;
-
-  // &__container__main-info{
-  //   margin: 0 auto 60px;
-  // }
   &_big {
     height: fit-content;
   }
-
-  // &__title {
-  //   margin-bottom: 40px;
-  //   @include font-face(20px, 500, 20px);
-  //   color: $text-color;
-
-  //   &_big {
-  //     margin-bottom: 20px;
-  //     @include font-face(40px, 500, 40px);
-  //     text-align: center;
-  //   }
-
-  // &__info {
-  //   width: 100%;
-  // }
-
-  // &__btn {
-  //   margin-top: 60px;
-  //   width: 100%;
-  // }
 }
 
 .profilePic {
   margin-bottom: 16px;
   position: relative;
   width: 130px;
-  // height: 130px;
   border-radius: 50%;
   cursor: pointer;
 
@@ -256,7 +229,6 @@ img {
     height: 100%;
     border-radius: 50%;
     background-color: #efefef;
-    // background-image: url(../../../static/withoutPhoto.svg);
     background-repeat: no-repeat;
     background-size: 40px 40px;
     background-position: center;
@@ -298,7 +270,6 @@ img {
   width: 100%;
   height: 100%;
   background-color: rgba($color: #202020, $alpha: 0.4);
-  // color: red;
 }
 
 .inputGroupSettings {
@@ -306,9 +277,8 @@ img {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 5px;
+  margin: 5px 100px 5px 0px;
   padding-bottom: 10px;
-  // @extend %bottom-border;
   font-size: 13px;
   font-weight: 500;
   line-height: 13px;
@@ -319,6 +289,34 @@ img {
 
   &__value {
     color: $second-color;
+    border: none ; 
+    outline: none ;
+  }
+}
+
+.inputGroupSettingsEdit {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin: 2px 0px 2px 0px;
+  padding-bottom: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 13px;
+
+
+  &__label {
+    color: $text-color;
+  }
+
+  &__value {
+    color: $second-color;
+    border: none ; 
+    outline: none ;
+    background: transparent;
+    text-align: right; 
+
   }
 }
 /*******settings****/
