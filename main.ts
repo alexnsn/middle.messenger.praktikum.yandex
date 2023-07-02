@@ -72,5 +72,4 @@ document.addEventListener("DOMContentLoaded", () => {
   const root = document.querySelector("#main");
 
   renderPage(getPage());
-  // root!.innerHTML = getPage();
 });
