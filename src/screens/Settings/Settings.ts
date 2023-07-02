@@ -9,14 +9,18 @@ export const settingsFormTemplate = `
       <h1 class="name">{{name}}</h1>
     </section>
     <section class="profile-container__info">
-      {{#each info}}
-        {{{this}}}
-      {{/each}}
+      {{{group_0}}}
+      {{{group_1}}}
+      {{{group_2}}}
+      {{{group_3}}}
+      {{{group_4}}}
+      {{{group_5}}}
+      {{{group_6}}}
     </section>
     <section class="profile-container__btn">
-      {{#each other}}
-          {{{this}}}
-      {{/each}}
+      {{{button_0}}}
+      {{{button_1}}}
+      {{{button_2}}}
     </section>
   </main>
 `;
