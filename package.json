@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "start": "npm run build && cp -R ./statics ./dist/statics && node server.ts",
+    "start": "npm run build && cp -R ./statics ./dist/statics && node server.js",
     "prebuild": "tsc --noEmit",
     "lint": "tsc --noEmit && eslint src/**/*.{ts,tsx}",
     "stylelint": "stylelint '**/*{.css,.scss}'"
