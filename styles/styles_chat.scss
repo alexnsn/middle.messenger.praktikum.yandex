@@ -16,6 +16,23 @@
   width: 45%;
 }
 
+.error-text {
+  position: absolute;
+  text-align: right;
+  float: left;
+  margin-top:-14px;
+  font-size: 9px;
+  color: red;
+}
+
+.error-text2 {
+  position: absolute;
+  text-align: right;
+  float: left;
+  margin-top: 44px;
+  font-size: 9px;
+  color: red;
+}
 
 .input__search {
     color: $text-color;

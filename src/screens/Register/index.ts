@@ -29,20 +29,17 @@ export class Registration extends Block<RegProps> {
 
           const login = data.get("login");
           if (login && typeof login === "string") {
-            validation.testLoginOnLength(login);
-            validation.testLoginOnSymbols(login);
+            validation.testLogin(login);
           }
 
           const firstName = data.get("first_name");
           if (firstName && typeof firstName === "string") {
             validation.testName(firstName);
-            validation.testNameFirstLetter(firstName);
           }
 
           const secondName = data.get("second_name");
           if (secondName && typeof secondName === "string") {
             validation.testName(secondName);
-            validation.testNameFirstLetter(secondName);
           }
 
           const phone = data.get("phone");
@@ -53,7 +50,6 @@ export class Registration extends Block<RegProps> {
           const password = data.get("password");
           if (password && typeof password === "string") {
             validation.testPassword(password);
-            validation.testPasswordOnLength(password);
           }
         },
       },
@@ -89,7 +85,26 @@ export class Registration extends Block<RegProps> {
             const data = new FormData(form);
             const temp = data.get(arr[1]);
             if (temp && typeof temp === "string") {
-              validation.testFieldByID(arr[1], temp);
+              const answer = validation.testFieldByID(arr[1], temp);
+              if (answer.field1 === false && answer.field2 !== undefined) {
+                const target = e.target as HTMLTextAreaElement;
+                const error = document.createElement("div");
+                target.classList.add("input-incorrect");
+                error.className = "error-text2";
+                error.classList.add(arr[1]);
+                error.innerHTML = answer.field2;
+                target.before(error);
+              }
+            }
+          },
+          focusin: (event: Event) => {
+            const target = event.target as HTMLTextAreaElement;
+            const error = document.getElementsByClassName("error-text2".concat(" ", target.name));
+            if (target.classList.contains("input-incorrect")) {
+              target.classList.remove("input-incorrect");
+              if (error[0]) {
+                error[0].remove();
+              }
             }
           },
         },

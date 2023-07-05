@@ -1,96 +1,98 @@
-export function testLoginOnLength(username: string): boolean {
-  const isMatch = typeof username === "string" && /^.{3,20}$/.test(username);
+interface MyObject {
+  field1: boolean;
+  field2?: string;
+}
+
+export function testLogin(username: string): MyObject {
+  let isMatch = typeof username === "string" && /^.{3,20}$/.test(username);
   if (!isMatch) {
     console.log("Логин. Длина: 3-20 символов");
+    return { field1: false, field2: "Логин. Длина: 3-20 символов" };
   }
-  return isMatch;
-}
-
-export function testLoginOnSymbols(username: string): boolean {
-  const isMatch = typeof username === "string" && /^[a-zA-Z0-9_-]+$/.test(username);
+  isMatch = typeof username === "string" && /^[a-zA-Z0-9_-]+$/.test(username);
   if (!isMatch) {
     console.log("Логин. Допустимые символы: _- и латиница");
+    return { field1: false, field2: "Логин. Допустимые символы: _- и латиница" };
   }
-  return isMatch;
+  return { field1: true };
 }
 
-export function testPassword(password: string): boolean {
-  const isMatch = typeof password === "string" && /^(?=.*[A-Z])(?=.*\d).+$/.test(password);
+export function testPassword(password: string): MyObject {
+  let isMatch = typeof password === "string" && /^(?=.*[A-Z])(?=.*\d).+$/.test(password);
   if (!isMatch) {
     console.log("Пароль. Должна быть заглавная буква и цифра.");
+    return { field1: false, field2: "Пароль. Должна быть заглавная буква и цифра." };
   }
-  return isMatch;
-}
-
-export function testPasswordOnLength(password: string): boolean {
-  const isMatch = typeof password === "string" && /^.{8,40}$/.test(password);
+  isMatch = typeof password === "string" && /^.{8,40}$/.test(password);
   if (!isMatch) {
     console.log("Пароль. Длина: 8-40 символов");
+    return { field1: false, field2: "Пароль. Длина: 8-40 символов" };
   }
-  return isMatch;
+  return { field1: true };
 }
 
-export function testMessage(message: string): boolean {
+export function testMessage(message: string): MyObject {
   const isMatch = typeof message === "string" && message.length > 0;
   if (!isMatch) {
     console.log("Сообщение должно быть непусто");
+    return { field1: false, field2: "Сообщение должно быть непусто" };
   }
-  return isMatch;
+  return { field1: true };
 }
 
-export function testName(name: string): boolean {
-  const isMatch = typeof name === "string" && /^[А-ЯЁа-яёA-Za-z]+$/.test(name);
+export function testName(name: string): MyObject {
+  let isMatch = typeof name === "string" && /^[А-ЯЁа-яёA-Za-z]+$/.test(name);
   if (!isMatch) {
     console.log("Имя и Фамилия. Латиница или кириллица");
+    return { field1: false, field2: "Имя и Фамилия. Латиница или кириллица" };
   }
-  return isMatch;
-}
-
-export function testNameFirstLetter(name: string): boolean {
-  const isMatch = typeof name === "string" && /^[А-ЯЁA-Z][А-ЯЁа-яёa-z]*$/.test(name);
+  isMatch = typeof name === "string" && /^[А-ЯЁA-Z][А-ЯЁа-яёa-z]*$/.test(name);
   if (!isMatch) {
     console.log("Имя и Фамилия. Первая буква должна быть заглавной");
+    return { field1: false, field2: "Имя и Фамилия. Первая буква должна быть заглавной" };
   }
-  return isMatch;
+  return { field1: true };
 }
 
-export function testPhone(phone: string): boolean {
+export function testPhone(phone: string): MyObject {
   const isMatch = typeof phone === "string" && /^\+?\d{10,15}$/.test(phone);
   if (!isMatch) {
     console.log("Телефон. 10-15 цифр");
+    return { field1: false, field2: "Телефон. 10-15 цифр" };
   }
-  return isMatch;
+  return { field1: true };
 }
 
-export function testEmail(phone: string): boolean {
+export function testEmail(email: string): MyObject {
   const isMatch =
-    typeof phone === "string" && /^[a-zA-Z0-9_.-]+@[a-zA-Z]+(\.[a-zA-Z]+)+$/.test(phone);
+    typeof email === "string" && /^[a-zA-Z0-9_.-]+@[a-zA-Z]+(\.[a-zA-Z]+)+$/.test(email);
   if (!isMatch) {
     console.log("Невалидный email");
+    return { field1: false, field2: "Невалидный email" };
   }
-  return isMatch;
+  return { field1: true };
 }
 
-export function testFieldByID(id: string, temp: string): boolean {
+export function testFieldByID(id: string, value: string): MyObject {
   switch (id) {
     case "login":
-      return testLoginOnLength(temp) && testLoginOnSymbols(temp);
+      return testLogin(value);
     case "password":
-      return testPassword(temp) && testPasswordOnLength(temp);
+      return testPassword(value);
     case "message":
-      return testMessage(temp);
+      return testMessage(value);
     case "first_name":
-      return testName(temp) && testNameFirstLetter(temp);
+      return testName(value);
     case "second_name":
-      return testName(temp) && testNameFirstLetter(temp);
+      return testName(value);
     case "phone":
-      return testPhone(temp);
+      return testPhone(value);
     case "email":
-      return testEmail(temp);
+      return testEmail(value);
     case "mail":
-      return testEmail(temp);
+      return testEmail(value);
     default:
       console.log(`No matching test function found for field with ID: ${id}`);
-      return false;
+      return { field1: true, field2: `No matching test function found for field with ID: ${id}` };
   }
 }

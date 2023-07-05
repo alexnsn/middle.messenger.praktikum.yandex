@@ -25,14 +25,12 @@ export class Login extends Block<LoginProps> {
             const data = new FormData(form);
             const login = data.get("login");
             if (login && typeof login === "string") {
-              validation.testLoginOnLength(login);
-              validation.testLoginOnSymbols(login);
+              validation.testLogin(login);
             }
 
             const password = data.get("password");
             if (password && typeof password === "string") {
               validation.testPassword(password);
-              validation.testPasswordOnLength(password);
             }
           },
         },
@@ -51,36 +49,36 @@ export class Login extends Block<LoginProps> {
         id: "login",
         type: "text",
         placeholder: "",
-        events: {
-          focusout: (e: Event) => {
-            e.preventDefault();
-            const form = document.getElementById("loginForm") as HTMLFormElement;
-            const data = new FormData(form);
-            const login = data.get("login");
-            if (login && typeof login === "string") {
-              validation.testLoginOnLength(login);
-              validation.testLoginOnSymbols(login);
-            }
-          },
-        },
+        // events: {
+        //   focusout: (e: Event) => {
+        //     e.preventDefault();
+        //     const form = document.getElementById("loginForm") as HTMLFormElement;
+        //     const data = new FormData(form);
+        //     const login = data.get("login");
+        //     if (login && typeof login === "string") {
+        //       validation.testLoginOnLength(login);
+        //       validation.testLoginOnSymbols(login);
+        //     }
+        //   },
+        // },
       },
       {
         label: "Пароль",
         id: "password",
         type: "password",
         placeholder: "",
-        events: {
-          focusout: (e: Event) => {
-            e.preventDefault();
-            const form = document.getElementById("loginForm") as HTMLFormElement;
-            const data = new FormData(form);
-            const password = data.get("password");
-            if (password && typeof password === "string") {
-              validation.testPassword(password);
-              validation.testPasswordOnLength(password);
-            }
-          },
-        },
+        // events: {
+        //   focusout: (e: Event) => {
+        //     e.preventDefault();
+        //     const form = document.getElementById("loginForm") as HTMLFormElement;
+        //     const data = new FormData(form);
+        //     const password = data.get("password");
+        //     if (password && typeof password === "string") {
+        //       validation.testPassword(password);
+        //       validation.testPasswordOnLength(password);
+        //     }
+        //   },
+        // },
       },
     ];
 
@@ -95,9 +93,9 @@ export class Login extends Block<LoginProps> {
 
     inputGroups.forEach((inputGroup) => {
       const input = new InputGroup(inputGroup);
-      if (input.element && inputGroup.events && inputGroup.events.focusout) {
-        input.element.addEventListener("focusout", inputGroup.events.focusout);
-      }
+      // if (input.element && inputGroup.events && inputGroup.events.focusout) {
+      //   input.element.addEventListener("focusout", inputGroup.events.focusout);
+      // }
       this.children[`group_${inputGroups.indexOf(inputGroup)}`] = input;
     });
 
