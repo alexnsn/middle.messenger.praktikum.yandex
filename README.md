@@ -8,8 +8,9 @@
 - [настройки пользователя](https://yandexmessangerkrasnoperov.netlify.app/settings)
 - [изменение настроек пользователя](https://yandexmessangerkrasnoperov.netlify.app/edit)
 - [регистрация](https://yandexmessangerkrasnoperov.netlify.app/reg)
+- [чаты](https://yandexmessangerkrasnoperov.netlify.app/chats)
 ## Стек
-Node.js, JS, Viote, SCSS, Handlebars, Netlify 
+Node.js, typeScript, Vite, SCSS, Handlebars, Netlify, EventBus, prettier, stylelint, eslint
 ## Макет
 https://www.figma.com/file/31soJkS72vGZwiTehBm7rt/Messenger?type=design&node-id=0-1&mode=design&t=bjTQzg6ZzL6Jmsav-0
 ## Установка

@@ -7,15 +7,19 @@ export const editFormTemplate = `
       </section>
       <h1 class="name">{{name}}</h1>
     </section>
-    <section class="profile-container__info">
-      {{#each info}}
-        {{{this}}}
-      {{/each}}
-    </section>
-    <section class="profile-container__btn">
-      {{#each other}}
-          {{{this}}}
-      {{/each}}
-    </section>
+    <form id="editForm" onsubmit="{{onSubmit}}">
+      <section class="profile-container__info">
+        {{{group_0}}}
+        {{{group_1}}}
+        {{{group_2}}}
+        {{{group_3}}}
+        {{{group_4}}}
+        {{{group_5}}}
+        {{{group_6}}}
+      </section>
+      <section class="profile-container__btn">
+        {{{button_0}}}
+      </section>
+    </form>
   </main>
 `;
